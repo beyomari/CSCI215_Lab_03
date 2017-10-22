@@ -5,7 +5,8 @@ function calculate() {
 
     var weight = document.getElementsByName("weight")[0].value;
     var height = document.getElementsByName("height")[0].value;
-
+    var weightunits = document.getElementsByName("units").value;
+    var heightunits = document.getElementsByName("units").value;
     console.log( 'Male = ' + male );
     console.log( 'Weight = ' + weight );
     console.log( 'Height = ' + height );
@@ -19,6 +20,12 @@ function calculate() {
 
     // ==========================================
     // Todo: Perform conversion calculations here
+    function computeConversion() {
+
+        if (heightunits="inches") height/=39.3700787;
+        if (weightunits="lbs") weight/=2.20462;
+
+    }
 
     // -------------------------------
     // Body Surface Area (BSA)
@@ -28,6 +35,7 @@ function calculate() {
 
     // ==========================================
     // Todo: Perform BSA calculation here
+    Math.sqrt(((height*weight)/3600));
 
     // -------------------------------
     // Ideal Body Weight (IBW)
@@ -39,12 +47,17 @@ function calculate() {
 
         // ==========================================
         // Todo: Perform female IBW calculation here
+        var x = 45;
+        var y = 2.3;
+        console.log(x+y*(height-60));
 
 
     } else if ( male ) {
 
         // ==========================================
         // Todo: Perform male IBW calculation here
+        var z = 50;
+        console.log(z+y*(height-60));
 
     }
 
@@ -56,6 +69,7 @@ function calculate() {
 
     // ==========================================
     // Todo: Perform BMI calculation here
+    console.log(weight/height);
 
 
 
